@@ -1,0 +1,138 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #f6abab;
+}
+.envelope {
+  position: relative;
+  cursor: pointer;
+}
+
+.back {
+  position: relative;
+  width: 348px;
+  height: 238px;
+  background: #f12327;
+}
+.front {
+  position: absolute;
+  border-right: 229px solid #f12327;
+  border-top: 172px solid transparent;
+  border-bottom: 40px solid transparent;
+  height: 0;
+  width: 0;
+  top: 0;
+  left: 120px;
+  z-index: 4;
+}
+.front:before {
+  content: "";
+  position: absolute;
+  border-left: 180px solid #f12327;
+  border-top: 125px solid transparent;
+  border-bottom: 115px solid transparent;
+  height: 0;
+  width: 0;
+  top: -172px;
+  left: -120px;
+}
+.front:after {
+  content: "";
+  position: absolute;
+  border-bottom: 115px solid #d1282b;
+  border-left: 176px solid transparent;
+  border-right: 173px solid transparent;
+  height: 0;
+  width: 0;
+  top: -48px;
+  left: -120px;
+}
+.top {
+  position: absolute;
+  border-top: 128px solid #d1282b;
+  border-left: 180px solid transparent;
+  border-right: 169px solid transparent;
+  height: 0;
+  width: 0;
+  top: 0;
+  transform-origin: top;
+  transition: 0.4s;
+}
+.envelope:hover .top {
+  transform: rotateX(160deg);
+}
+.letter {
+  position: absolute;
+  background: rgb(254, 211, 165);
+  width: 320px;
+  height: 180px;
+  top: 10px;
+  left: 10px;
+  transition: 0.2s;
+}
+.envelope:hover .letter {
+  transform: translateY(-100px);
+  z-index: 4;
+}
+.text1 {
+  position: absolute;
+  color: white;
+  font-family: sans-serif;
+  top: -50%;
+}
+.text {
+  text-align: center;
+  font-size: 11px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 20px;
+  font-weight: bold;
+  color: black;
+  position: relative;
+  top: -20px;
+  left: 20px;
+}
+
+/*---heart -----*/
+.heart {
+  background-color: red;
+  height: 45px;
+  width: 45px;
+  position: relative;
+  top: 25px;
+  left: 25px;
+  transform: rotate(-45deg);
+  box-shadow: -5px 10px 90px red;
+  animation: untoldcoding 0.8s linear infinite;
+}
+
+@keyframes untoldcoding {
+  0% {
+    transform: rotate(-45deg) scale(1.05);
+  }
+  70% {
+    transform: rotate(-45deg) scale(1);
+  }
+  100% {
+    transform: rotate(-45deg) scale(0.8);
+  }
+}
+.heart:before {
+  content: "";
+  position: absolute;
+  height: 45px;
+  width: 45px;
+  background-color: red;
+  top: -25px;
+  border-radius: 50px;
+}
+.heart:after {
+  content: "";
+  position: absolute;
+  height: 45px;
+  width: 45px;
+  background-color: red;
+  right: -25px;
+  border-radius: 50px;
+}
